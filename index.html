@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spa Hero Section</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ✅ Modal Styling */
+      .booking-modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+
+      .booking-content {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        position: relative;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .btn,
+      .cta-button,
+      button {
+        padding: 10px 20px;
+        background: #28a745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn:hover,
+      .cta-button:hover,
+      button:hover {
+        background: #218838;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ✅ Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Experience Ultimate Relaxation</h1>
+        <p>Rejuvenate your body and mind with our premium spa treatments</p>
+        <button class="cta-button" id="bookAppointmentBtn">
+          Book Appointment
+        </button>
+      </div>
+    </section>
+
+    <!-- ✅ Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+      <div class="booking-content">
+        <span class="close-button" id="closeModalBtn">&times;</span>
+        <h2>Book Appointment</h2>
+
+        <!-- Form Submission -->
+        <form
+          class="vertical-form"
+          action="https://submit-form.com/Ise0Botla"
+          method="POST"
+        >
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="full-name" type="text" required />
+
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel" required />
+
+          <label for="appointment-date">Appointment Date</label>
+          <input
+            id="appointment-date"
+            name="appointment-date"
+            type="date"
+            required
+          />
+
+          <label for="preferred-time">Preferred Time</label>
+          <select id="preferred-time" name="preferred-time" required>
+            <option value="">Select Time</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+          </select>
+
+          <button type="submit">Complete Booking</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ✅ Services Section -->
+    <section class="services" id="services">
+      <h2>Our Services</h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <img
+            src="./jared-rice-PibraWHb4h8-unsplash (1).jpg"
+            alt="Massage Therapy"
+          />
+          <h3>Massage Therapy</h3>
+          <p>Relax your mind and body with our soothing massage treatments.</p>
+          <a href="#" class="btn book-now-btn">Book Now</a>
+        </div>
+
+        <div class="service-card">
+          <img src="./jared-rice-PibraWHb4h8-unsplash (1).jpg" alt="Facials" />
+          <h3>Facials</h3>
+          <p>Rejuvenate your skin with our nourishing facial services.</p>
+          <a href="#" class="btn book-now-btn">Book Now</a>
+        </div>
+
+        <div class="service-card">
+          <img
+            src="./jared-rice-PibraWHb4h8-unsplash (1).jpg"
+            alt="Body Scrub"
+          />
+          <h3>Body Scrub</h3>
+          <p>Exfoliate and refresh your skin with our body scrub treatments.</p>
+          <a href="#" class="btn book-now-btn">Book Now</a>
+        </div>
+        <div class="service-card">
+          <img
+            src="./jared-rice-PibraWHb4h8-unsplash (1).jpg"
+            alt="Body Scrub"
+          />
+          <h3>Body Scrub</h3>
+          <p>Exfoliate and refresh your skin with our body scrub treatments.</p>
+          <a href="#" class="btn book-now-btn">Book Now</a>
+        </div>
+        <div class="service-card">
+          <img
+            src="./jared-rice-PibraWHb4h8-unsplash (1).jpg"
+            alt="Body Scrub"
+          />
+          <h3>Body Scrub</h3>
+          <p>Exfoliate and refresh your skin with our body scrub treatments.</p>
+          <a href="#" class="btn book-now-btn">Book Now</a>
+        </div>
+        <div class="service-card">
+          <img
+            src="./jared-rice-PibraWHb4h8-unsplash (1).jpg"
+            alt="Body Scrub"
+          />
+          <h3>Body Scrub</h3>
+          <p>Exfoliate and refresh your skin with our body scrub treatments.</p>
+          <a href="#" class="btn book-now-btn">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ JavaScript -->
+    <script>
+      // Select modal and buttons
+      const modal = document.getElementById("bookingModal");
+      const closeButton = document.getElementById("closeModalBtn");
+      const bookNowButtons = document.querySelectorAll(".book-now-btn");
+      const bookAppointmentBtn = document.getElementById("bookAppointmentBtn");
+
+      // ✅ Function to open modal
+      function openModal() {
+        modal.style.display = "flex";
+      }
+
+      // ✅ Function to close modal
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // ✅ Add event listeners to "Book Now" buttons
+      bookNowButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault(); // Prevent link reload
+          openModal();
+        });
+      });
+
+      // ✅ Add event listener to "Book Appointment" button
+      bookAppointmentBtn.addEventListener("click", openModal);
+
+      // ✅ Add event listener to close button
+      closeButton.addEventListener("click", closeModal);
+
+      // ✅ Close modal when clicking outside of content
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>

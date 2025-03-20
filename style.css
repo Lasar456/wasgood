@@ -1,0 +1,364 @@
+/* ✅ General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ✅ Body Styling */
+body {
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ✅ Hero Section with Background Image */
+.hero {
+  background: url("./jared-rice-PibraWHb4h8-unsplash\ \(1\).jpg") no-repeat
+    center center/cover;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Hero Section with Background Image */
+/* ✅ Hero Section with Responsive Background Image */
+.hero {
+  background: url("./jared-rice-PibraWHb4h8-unsplash\ \(1\).jpg") no-repeat
+    center center;
+  background-size: 1500px 800px; /* Cover the entire hero section */
+  color: #fff;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Optional Overlay for Readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: -1;
+}
+
+/* ✅ Hero Text Styling */
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  z-index: 2;
+}
+
+.hero p {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  z-index: 2;
+}
+
+/* ✅ CTA Button Styling */
+.cta-button {
+  padding: 15px 40px;
+  font-size: 18px;
+  background: #ff7e5f;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.cta-button:hover {
+  background: #ff4e50;
+  transform: scale(1.05);
+}
+
+/* ✅ Responsive Media Queries */
+
+/* For tablets and small screens */
+@media (max-width: 1024px) {
+  .hero {
+    height: 80vh; /* Adjust height for tablets */
+    background-size: 1024px;
+  }
+
+  .hero h1 {
+    font-size: 3rem; /* Smaller heading */
+  }
+
+  .hero p {
+    font-size: 1.4rem;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh; /* Smaller height */
+    background-size: 768px;
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem; /* Smaller heading */
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .hero {
+    height: 60vh; /* Compact height */
+    background-size: 480px;
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Even smaller heading */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+}
+
+/* ✅ Modal Styling */
+.booking-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.booking-content {
+  background: #fff;
+  padding: 40px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 0.5s;
+  position: relative;
+}
+
+/* ✅ Modal Close Button */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-button:hover {
+  color: #ff4e50;
+}
+
+/* ✅ Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: bold;
+  color: #444;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: #76c7c0;
+  box-shadow: 0 0 10px rgba(118, 199, 192, 0.6);
+}
+
+form button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* ✅ Services Section */
+.services {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 3rem;
+  color: #444;
+  margin-bottom: 50px;
+  letter-spacing: 1.5px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  font-size: 2rem;
+  color: #333;
+  margin: 20px 0 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  padding: 0 20px 20px;
+}
+
+/* ✅ Book Now Button */
+.btn {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 12px 30px;
+  font-size: 18px;
+  color: #fff;
+  background: #ff7e5f;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff4e50;
+  transform: scale(1.05);
+}
+
+/* ✅ Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    padding: 12px 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-content {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+}
